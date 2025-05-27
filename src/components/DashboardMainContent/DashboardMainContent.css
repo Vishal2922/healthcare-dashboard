@@ -23,14 +23,13 @@
   padding: 16px;
   display: flex;
   flex-direction: column;
-  gap: 10px; /* You can reduce this to 8px or 6px if needed */
+  gap: 10px;
   box-sizing: border-box;
 }
 
-/* Top row containing calendar and schedule */
 .top-row {
   display: flex;
-  flex: 0 0 48%; /* increased from 45% */
+  flex: 0 0 48%;
   gap: 10px;
 }
 
@@ -42,12 +41,12 @@
   flex: 0 0 40%;
 }
 
-/* Bottom row: activity feed fills remaining 55% */
 .activity-box {
   flex: 1;
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* disables scroll */
+  overflow: hidden;
+  min-width: 0; 
 }
 
 .content-box {
@@ -58,8 +57,8 @@
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%; /* Ensures full height for its flex parent */
-  margin: 0; /* 🔧 Remove any vertical margin */
+  height: 100%;
+  margin: 0;
 }
 
 .content-box > * {
@@ -68,4 +67,47 @@
 * {
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    flex-direction: column;
+  }
+
+  .anatomy-panel,
+  .right-panel {
+    width: 100%;
+    height: auto;
+  }
+
+  .top-row {
+    flex-direction: column;
+    flex: unset;
+  }
+
+  .calendar-box,
+  .schedule-box {
+    flex: unset;
+    width: 100%;
+  }
+
+  .activity-box {
+    flex: unset;
+    width: 100%;
+  }
+
+  .content-box {
+    margin-bottom: 16px;
+  }
+}
+@media (max-width: 768px) {
+  .icon {
+    font-size: 18px;
+  }
+
+  .feed-card, .schedule-modern li {
+    font-size: 13px;
+    padding: 10px 14px;
+  }
+}
+
 

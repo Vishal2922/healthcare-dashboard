@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import { LayoutDashboard, Calendar, Clock, MessageCircle, Activity, Settings, HelpCircle, FileText } from "lucide-react";
+import { LayoutDashboard, Calendar, Clock, MessageCircle, Activity, Settings, HelpCircle, FileText, Bold } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", icon: <LayoutDashboard /> },
@@ -17,7 +17,7 @@ const navItems = [
 function Sidebar() {
   return (
     <aside className="sidebar">
-      <h3 className="sidebar-title">General</h3>
+      <h3 className="sidebar-title">Healthcare .</h3>
       <ul className="nav-list">
         {navItems.map((item, index) => (
           <li className="nav-item" key={index}>

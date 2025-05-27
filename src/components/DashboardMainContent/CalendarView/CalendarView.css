@@ -1,35 +1,108 @@
-.calendar-modern {
+.weekly-calendar {
   font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
-.calendar-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 10px;
-  margin-top: 12px;
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
 }
 
-.calendar-cell {
-  background: #f3f6fb;
+.nav-buttons button {
+  background: #e5e7eb;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-left: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.nav-buttons button:hover {
+  background: #d1d5db;
+}
+
+.calendar-days {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  flex: 1;
+}
+
+.calendar-day {
+  flex: 1;
+  background: #f3f4f6;
   border-radius: 10px;
-  padding: 12px;
   text-align: center;
-  font-weight: 500;
-  position: relative;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
-.calendar-cell.highlight {
-  border: 2px solid #3b82f6;
-  background: #e0edff;
+.calendar-day.today {
+  background: #3b82f6;
+  color: white;
 }
 
-.dot {
-  width: 6px;
-  height: 6px;
-  background: #ef4444;
-  border-radius: 50%;
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  transform: translateX(-50%);
+.day-label {
+  font-weight: 600;
+  font-size: 14px;
 }
+
+.day-number {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.day-events {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #333;
+}
+
+.calendar-day.today .day-events {
+  color: white;
+}
+
+.today-appointments {
+  margin-top: 16px;
+  background: #f9fafb;
+  padding: 12px 16px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.today-appointments h4 {
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.today-appointments ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.today-appointments li {
+  margin-bottom: 6px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.today-appointments .icon {
+  font-size: 18px;
+}
+
+

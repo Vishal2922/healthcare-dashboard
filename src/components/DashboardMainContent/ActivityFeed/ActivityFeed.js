@@ -1,52 +1,34 @@
 import React from 'react';
+import {
+  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer
+} from 'recharts';
 import './ActivityFeed.css';
 
-const activities = [
-  '📝 John uploaded a lab report.',
-  '💊 New prescription added for Alice.',
-  '📤 MRI scan uploaded by Dr. Lee.',
-  '📁 Patient file updated.',
-  '✅ Blood test results verified.'
-];
-
-const bgColors = [
-  '#e3f2fd', // light blue
-  '#e8f5e9', // light green
-  '#f3e5f5', // light purple
-  '#fff3e0', // light orange
-  '#ede7f6'  // light lavender
+const uploadData = [
+  { day: 'Mon', uploads: 2 },
+  { day: 'Tue', uploads: 5 },
+  { day: 'Wed', uploads: 3 },
+  { day: 'Thu', uploads: 6 },
+  { day: 'Fri', uploads: 4 },
+  { day: 'Sat', uploads: 1 },
+  { day: 'Sun', uploads: 2 }
 ];
 
 const ActivityFeed = () => {
-  const leftFeeds = activities.slice(0, 3);  // 👈 First 3 on left
-  const rightFeeds = activities.slice(3);   // 👈 Last 2 on right
-
   return (
-    <div className="activity-modern">
-      <h2>📌 Activity Feed</h2>
-      <div className="feed-grid">
-        <div className="feed-column">
-          {leftFeeds.map((activity, index) => (
-            <div
-              key={index}
-              className="feed-card"
-              style={{ backgroundColor: bgColors[index % bgColors.length] }}
-            >
-              {activity}
-            </div>
-          ))}
-        </div>
-        <div className="feed-column">
-          {rightFeeds.map((activity, index) => (
-            <div
-              key={index + 3}
-              className="feed-card"
-              style={{ backgroundColor: bgColors[(index + 3) % bgColors.length] }}
-            >
-              {activity}
-            </div>
-          ))}
-        </div>
+    <div className="activity-feed-charts">
+      <h2>📊 Activity Overview</h2>
+
+      <div className="chart-card">
+        <h4>Uploads This Week</h4>
+        <ResponsiveContainer width="100%" height={80}>
+          <BarChart data={uploadData}>
+            <XAxis dataKey="day" />
+            <YAxis hide />
+            <Tooltip />
+            <Bar dataKey="uploads" fill="#3b82f6" radius={[4, 4, 0, 0]} />
+          </BarChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

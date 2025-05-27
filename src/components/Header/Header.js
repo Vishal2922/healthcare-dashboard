@@ -5,14 +5,13 @@ import { Bell, Plus } from "lucide-react";
 function Header() {
   return (
     <header className="header">
-      <div className="logo">Healthcare.</div>
 
       <div className="search-bar">
         <input type="text" placeholder="Search..." disabled />
+        <Bell className="icon" />
       </div>
 
       <div className="header-right">
-        <Bell className="icon" />
         <div className="user-profile">
           <img
             src="https://i.pravatar.cc/40?img=3"

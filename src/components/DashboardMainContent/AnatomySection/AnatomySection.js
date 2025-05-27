@@ -7,12 +7,18 @@ const AnatomySection = () => {
     age: 32,
     gender: 'Male',
     id: 'PT-10245',
-    avatar: 'https://i.pravatar.cc/100?img=12' // mock avatar
+    avatar: 'https://i.pravatar.cc/100?img=12'
   };
+
+  const organs = [
+    { icon: '🫀', name: 'Heart', status: 'Normal', color: 'green' },
+    { icon: '🫁', name: 'Lungs', status: 'Needs Attention', color: 'orange' },
+    { icon: '🦴', name: 'Bones', status: 'Mild Concern', color: 'yellow' }
+  ];
 
   return (
     <div className="anatomy-card">
-      {/* Patient Info */}
+      {/* Patient Header */}
       <div className="patient-header">
         <img className="avatar" src={patient.avatar} alt="Patient Avatar" />
         <div>
@@ -22,12 +28,25 @@ const AnatomySection = () => {
         </div>
       </div>
 
-      {/* Anatomy Model */}
+      {/* Anatomy Image */}
       <div className="anatomy-image">
         <img
           src="/images/human-body.jpg"
           alt="Anatomy Model"
         />
+      </div>
+
+      {/* Organ Conditions */}
+      <div className="organ-status-cards">
+        {organs.map((org, index) => (
+          <div className="organ-card-v2" key={index}>
+            <span className="organ-icon">{org.icon}</span>
+            <div className="organ-info">
+              <span className="organ-name">{org.name}</span>
+              <span className={`status-pill ${org.color}`}>{org.status}</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
