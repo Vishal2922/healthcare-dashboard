@@ -18,14 +18,6 @@ const getWeekDays = (offset = 0) => {
   });
 };
 
-// Mock appointments for demo
-const mockAppointments = {
-  'Mon': ['Dental @ 9am', 'Therapy @ 3pm'],
-  'Tue': ['Eye Check @ 11am'],
-  'Wed': ['Blood Test @ 10am'],
-  'Fri': ['Vaccination @ 1pm'],
-};
-
 const CalendarView = () => {
   const [weekOffset, setWeekOffset] = useState(0);
   const days = getWeekDays(weekOffset);

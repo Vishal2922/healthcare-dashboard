@@ -1,6 +1,6 @@
 import React from "react";
 import "./Sidebar.css";
-import { LayoutDashboard, Calendar, Clock, MessageCircle, Activity, Settings, HelpCircle, FileText, Bold } from "lucide-react";
+import { LayoutDashboard, Calendar, Clock, MessageCircle, Activity, Settings, HelpCircle, FileText } from "lucide-react";
 
 const navItems = [
   { label: "Dashboard", icon: <LayoutDashboard /> },
