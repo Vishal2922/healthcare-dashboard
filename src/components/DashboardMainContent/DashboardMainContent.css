@@ -1,0 +1,71 @@
+.dashboard-wrapper {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.anatomy-panel {
+  width: 30%;
+  height: 100%;
+  padding: 16px;
+  background-color: #ffffff;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-panel {
+  width: 70%;
+  height: 100%;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* You can reduce this to 8px or 6px if needed */
+  box-sizing: border-box;
+}
+
+/* Top row containing calendar and schedule */
+.top-row {
+  display: flex;
+  flex: 0 0 48%; /* increased from 45% */
+  gap: 10px;
+}
+
+.calendar-box {
+  flex: 0 0 60%;
+}
+
+.schedule-box {
+  flex: 0 0 40%;
+}
+
+/* Bottom row: activity feed fills remaining 55% */
+.activity-box {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* disables scroll */
+}
+
+.content-box {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  padding: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures full height for its flex parent */
+  margin: 0; /* 🔧 Remove any vertical margin */
+}
+
+.content-box > * {
+  overflow-y: auto;
+}
+* {
+  box-sizing: border-box;
+}
+

@@ -1,0 +1,14 @@
+.app {
+  display: flex;
+  height: 100vh; /* No scrolling: fixed full height */
+  overflow: auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f7f9fc;
+  overflow: auto;
+}
